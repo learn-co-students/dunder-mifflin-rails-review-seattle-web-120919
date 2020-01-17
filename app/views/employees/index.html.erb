@@ -1,0 +1,4 @@
+<h1>Employee Index</h1>
+<% @employees.each do |employee| %>
+    <%= link_to employee.full_name, employee_path(employee) %><br>
+<% end %>
