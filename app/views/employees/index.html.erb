@@ -1,0 +1,4 @@
+<% @employees.each do |employee|%>
+<%= employee.full_name %>
+<%= link_to 'Profile', employee_path(employee) %><br>
+<% end%>
