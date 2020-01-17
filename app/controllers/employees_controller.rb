@@ -11,18 +11,17 @@ class EmployeesController < ApplicationController
 
     def create
         @employee = Employee.new(employee_params)
-        if @employee.save
-            redirect_to @employee 
+        if @employee.valid?
+            @employee.save
+            redirect_to employee_path(@employee)
         else 
-            render :new 
+            render 'new'
         end
     end
 
     def update
         @employee = Employee.find(params[:id])
-        @employee.update(employee_params)
-        
-        if @employee.save
+        if @employee.update(employee_params)
             redirect_to @employee
         else
             render :edit
@@ -32,7 +31,7 @@ class EmployeesController < ApplicationController
     private
 
     def employee_params
-        params.require(:employee).permit(:first_name, :last_name, :alias, :title, :office, :img_url)
+        params.require(:employee).permit(:first_name, :last_name, :alias, :title, :office, :img_url, :dog_id)
     end
 
     def find_employee
