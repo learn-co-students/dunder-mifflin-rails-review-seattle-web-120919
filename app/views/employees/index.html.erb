@@ -1,0 +1,7 @@
+<% @employees.each do |employee| %>
+    <%= link_to employee.first_name, employee_path(employee) %><br>
+<% end %>
+
+
+<%# For our index page for Employees, a user should be able to click 
+on a specific Employee and take them to their corresponding show page. %>
