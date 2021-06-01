@@ -1,0 +1,16 @@
+<h1> Dog Details </h1>
+<label>Name: </label>
+<%= @dog.name %><br>
+<label>Breed: </label>
+<%= @dog.breed %><br>
+<label>Age: </label>
+<%= @dog.age %><br>
+
+<br>
+<h3>Dog's Employees</h3>
+<% @dog.employees.each do |employee| %>
+    <label>Name: </label>
+    <%= employee.first_name%><br>
+<% end %>
+<%# list the Dunder Mifflin Employees they are connected to %>
+
